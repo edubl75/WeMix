@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WeMix – Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="profile">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- IZQUIERDA -->
+        <div class="header-left">
+<a href="home.html" class="logo">
+    WeMix
+</a>
+        </div>
+
+        <!-- CENTRO -->
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Explorar</a>
+            <a href="downloads.html">Mis Descargas</a>
+            <a href="upload.html">Subir Track</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html" class="active">Perfil</a>
+        </nav>
+
+        <!-- DERECHA -->
+<div class="header-right" id="headerRight">
+
+    <span class="membership-badge" id="membershipBadge">
+        FREE
+    </span>
+
+    <span class="credits" id="creditsDisplay">
+        Créditos: 0
+    </span>
+
+</div>
+
+    </header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- PROFILE HEADER -->
+    <section class="profile-header">
+        <div class="profile-avatar">DJ</div>
+
+        <div class="profile-info">
+            <h1>DJ Pulse</h1>
+            <p class="profile-role">Productor & DJ · Tech House / Melodic</p>
+
+            <div class="profile-stats">
+                <div class="stat">
+                    <strong id="trackCount">0</strong>
+                    <span>Tracks</span>
+                </div>
+                <div class="stat">
+                    <strong id="downloadsCount">0</strong>
+                    <span>Descargas</span>
+                </div>
+                <div class="stat">
+                    <strong id="followersCount">0</strong>
+                    <span>Seguidores</span>
+                </div>
+            </div>
+
+            <!-- 🔥 REPUTACIÓN BIEN COLOCADA -->
+            <div class="profile-reputation">
+
+                <div class="reputation-bar">
+                    <div class="reputation-fill" id="reputationFill"></div>
+                </div>
+
+                <div class="reputation-info">
+                    <span class="reputation-badge" id="reputationBadge">Newbie</span>
+                    <span class="reputation-progress" id="reputationProgress">0%</span>
+                </div>
+
+            </div>
+
+        </div>
+
+                <!-- BOTÓN LOGOUT -->
+    <div class="profile-logout">
+        <button id="logoutBtn" class="btn-logout">
+            Cerrar sesión
+        </button>
+    </div>
+
+    </section>
+
+
+
+
+        <!-- TRACK LIST -->
+        <section class="track-list profile">
+
+            <div class="track-header">
+                <span></span>
+                <span>Track</span>
+                <span>Tipo</span>
+                <span>Género</span>
+                <span>BPM</span>
+                <span>Key</span>
+                <span>Estado</span>
+            </div>
+
+        <!-- 👇 AQUÍ VAN LOS TRACKS DINÁMICOS -->
+        <div id="tracksContainer"></div>
+
+        </section>
+
+
+    </main>
+
+    <!-- LOGOUT MODAL -->
+<div class="modal-overlay" id="logoutModal">
+    <div class="modal-box">
+        <h3>¿Cerrar sesión?</h3>
+        <p>Se cerrará tu sesión actual y volverás a la pantalla de login.</p>
+
+        <div class="modal-actions">
+            <button id="confirmLogout" class="btn-danger">Sí, cerrar sesión</button>
+            <button id="cancelLogout" class="btn-secondary">Cancelar</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- AUDIO PLAYER -->
+<div class="audio-player" id="audioPlayer">
+
+    <!-- LEFT -->
+    <div class="player-left">
+
+        <button id="playerToggle" class="player-play">
+            ▶
+        </button>
+
+        <div class="player-meta">
+            <strong id="playerTrack">Track</strong>
+
+            <span id="playerDetails">
+                DJ User • Mashup • 122 BPM • 8A
+            </span>
+        </div>
+
+    </div>
+
+    <!-- CENTER -->
+    <div class="player-center">
+
+        <span id="currentTime">0:00</span>
+
+        <div class="player-progress">
+            <div class="player-progress-fill" id="playerProgressFill"></div>
+        </div>
+
+        <span id="duration">0:00</span>
+
+    </div>
+
+</div>
+
+<audio id="mainAudio"></audio>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

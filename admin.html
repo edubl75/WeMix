@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WeMix – Admin Panel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="admin-page">
+
+<header class="header">
+
+    <div class="header-left">
+        <a href="home.html" class="logo">
+            WeMix
+        </a>
+    </div>
+
+    <nav class="nav" id="mainNav">
+        <a href="index.html">Explorar</a>
+        <a href="admin.html" class="active">
+            Admin
+        </a>
+    </nav>
+
+    <div class="header-right" id="headerRight">
+
+        <span
+            class="membership-badge admin"
+            id="membershipBadge"
+        >
+            ADMIN
+        </span>
+
+    </div>
+
+</header>
+
+<main class="container admin-page">
+
+    <section class="page-title">
+
+        <h1>Panel de Administración</h1>
+
+        <p>
+            Gestiona tracks y revisa contenido
+            pendiente dentro de WeMix.
+        </p>
+
+    </section>
+
+    <section class="dashboard-stats admin-stats">
+
+    <div class="stat-card">
+        <span class="stat-label">
+            Pendientes
+        </span>
+
+        <strong
+            class="stat-value"
+            id="pendingCount"
+        >
+            0
+        </strong>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">
+            Publicados
+        </span>
+
+        <strong
+            class="stat-value"
+            id="publishedAdminCount"
+        >
+            0
+        </strong>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">
+            Rechazados
+        </span>
+
+        <strong
+            class="stat-value"
+            id="rejectedCount"
+        >
+            0
+        </strong>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">
+            Total Tracks
+        </span>
+
+        <strong
+            class="stat-value"
+            id="totalAdminTracks"
+        >
+            0
+        </strong>
+    </div>
+
+</section>
+
+    <section class="track-list">
+
+        <div class="track-header">
+
+    <span></span>
+
+    <span>Track</span>
+    <span>Usuario</span>
+    <span>Info</span>
+    <span>Acciones</span>
+    <span>Estado</span>
+
+</div>
+
+        <div id="adminTracks"></div>
+
+    </section>
+
+</main>
+
+
+<!-- AUDIO PLAYER -->
+<div class="audio-player" id="audioPlayer">
+
+    <!-- LEFT -->
+    <div class="player-left">
+
+        <button id="playerToggle" class="player-play">
+            ▶
+        </button>
+
+        <div class="player-meta">
+            <strong id="playerTrack">Track</strong>
+
+            <span id="playerDetails">
+                DJ User • Mashup • 122 BPM • 8A
+            </span>
+        </div>
+
+    </div>
+
+    <!-- CENTER -->
+    <div class="player-center">
+
+        <span id="currentTime">0:00</span>
+
+        <div class="player-progress">
+            <div class="player-progress-fill" id="playerProgressFill"></div>
+        </div>
+
+        <span id="duration">0:00</span>
+
+    </div>
+
+</div>
+
+<audio id="mainAudio"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

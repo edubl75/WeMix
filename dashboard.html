@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WeMix – Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- IZQUIERDA -->
+        <div class="header-left">
+<a href="home.html" class="logo">
+    WeMix
+</a>
+        </div>
+
+        <!-- CENTRO -->
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Explorar</a>
+            <a href="downloads.html">Mis Descargas</a>
+            <a href="upload.html">Subir Track</a>
+            <a href="dashboard.html" class="active">Dashboard</a>
+            <a href="profile.html">Perfil</a>
+        </nav>
+
+<!-- DERECHA -->
+<div class="header-right" id="headerRight">
+
+    <span class="membership-badge" id="membershipBadge">
+        FREE
+    </span>
+
+    <span class="credits" id="creditsDisplay">
+        Créditos: 0
+    </span>
+
+</div>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="container dashboard">
+
+        <!-- TÍTULO -->
+        <section class="page-title">
+            <h1>Dashboard</h1>
+            <p>Resumen de tu actividad como creador en WeMix</p>
+        </section>
+
+        <!-- DASHBOARD STATS -->
+<section class="dashboard-stats">
+
+    <div class="stat-card">
+        <span class="stat-label">Tracks publicados</span>
+        <strong class="stat-value" id="publishedCount">0</strong>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Descargas totales</span>
+        <strong class="stat-value" id="downloadsTotal">0</strong>
+    </div>
+
+    <div class="stat-card">
+        <span class="stat-label">Ganancias estimadas</span>
+        <strong class="stat-value" id="creditsTotal">0</strong>
+    </div>
+
+    <div class="stat-card highlight">
+        <span class="stat-label">En revisión</span>
+        <strong class="stat-value" id="reviewCount">0</strong>
+    </div>
+
+</section>
+
+<!-- RECENT ACTIVITY -->
+<section class="dashboard-section">
+    <h2 class="section-title">Actividad reciente</h2>
+
+    <div class="activity-list">
+
+        <div class="activity-header">
+            <span>Track</span>
+            <span>Acción</span>
+            <span>Fecha</span>
+        </div>
+
+
+    <!-- 🔥 CONTENEDOR DINÁMICO -->
+    <div id="activityContainer"></div>
+
+</div>
+
+    </div>
+</section>
+
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

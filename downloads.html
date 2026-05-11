@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>WeMix – Mis Descargas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="downloads-page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+        <!-- IZQUIERDA -->
+        <div class="header-left">
+        <a href="home.html" class="logo">
+            WeMix
+        </a>
+        </div>
+
+        <!-- CENTRO -->
+        <nav class="nav" id="mainNav">
+            <a href="index.html">Explorar</a>
+            <a href="downloads.html" class="active">Mis Descargas</a>
+            <a href="upload.html">Subir Track</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="profile.html">Perfil</a>
+        </nav>
+
+        <!-- DERECHA -->
+<div class="header-right" id="headerRight">
+
+    <span class="membership-badge" id="membershipBadge">
+        FREE
+    </span>
+
+    <span class="credits" id="creditsDisplay">
+        Créditos: 0
+    </span>
+
+</div>
+
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE TITLE -->
+        <section class="page-title">
+            <h1>Mis Descargas</h1>
+            <p>Vuelve a descargar tus tracks sin coste adicional</p>
+        </section>
+
+        <!-- FILTERS -->
+        <section class="filters">
+            <input type="text" placeholder="Buscar track o creador">
+            <select>
+                <option>Género</option>
+                <option>House</option>
+                <option>Tech House</option>
+                <option>EDM</option>
+            </select>
+
+            <select>
+                <option>Tipo</option>
+                <option>Mashup</option>
+                <option>Edit</option>
+                <option>Extended</option>
+            </select>
+        </section>
+
+        <!-- TRACK LIST -->
+        <section class="track-list">
+            
+            <!-- TRACK HEADER -->
+            <div class="track-header">
+            <span></span>
+            <span>Track</span>
+            <span>Tipo</span>
+            <span>Género</span>
+            <span>BPM</span>
+            <span>Key</span>
+            <span>Fecha</span>
+            <span></span>
+        </div>
+
+        <div id="downloadsList"></div>
+
+
+
+        </section>
+
+    </main>
+
+
+
+
+
+    <!-- AUDIO PLAYER -->
+<div class="audio-player" id="audioPlayer">
+
+    <!-- LEFT -->
+    <div class="player-left">
+
+        <button id="playerToggle" class="player-play">
+            ▶
+        </button>
+
+        <div class="player-meta">
+            <strong id="playerTrack">Track</strong>
+
+            <span id="playerDetails">
+                DJ User • Mashup • 122 BPM • 8A
+            </span>
+        </div>
+
+    </div>
+
+    <!-- CENTER -->
+    <div class="player-center">
+
+        <span id="currentTime">0:00</span>
+
+        <div class="player-progress">
+            <div class="player-progress-fill" id="playerProgressFill"></div>
+        </div>
+
+        <span id="duration">0:00</span>
+
+    </div>
+
+</div>
+
+<audio id="mainAudio"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
