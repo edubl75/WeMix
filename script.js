@@ -81,7 +81,7 @@ if (mainNav && user) {
     if (user.membership === "ADMIN") {
 
         mainNav.innerHTML = `
-            <a href="index.html">
+            <a href="explorer.html">
                 Explorar
             </a>
 
@@ -96,7 +96,7 @@ if (mainNav && user) {
     else if (user.membership === "FREE") {
 
         mainNav.innerHTML = `
-            <a href="index.html">
+            <a href="explorer.html">
                 Explorar
             </a>
 
@@ -115,7 +115,7 @@ if (mainNav && user) {
     else {
 
         mainNav.innerHTML = `
-            <a href="index.html">
+            <a href="explorer.html">
                 Explorar
             </a>
 
@@ -174,7 +174,7 @@ if (
     adminPages.includes(currentPage)
 ) {
 
-    window.location.href = "index.html";
+    window.location.href = "explorer.html";
 
 }
 
@@ -427,7 +427,7 @@ if (loginBtn) {
             JSON.stringify(user)
         );
 
-        window.location.href = "index.html";
+        window.location.href = "explorer.html";
 
     });
 

@@ -2,31 +2,31 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>WeMix – Mis Descargas</title>
+    <title>WeMix – Explorar Pool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="downloads-page">
+<body>
 
-    <!-- HEADER -->
-    <header class="header">
+<!-- HEADER -->
+<header class="header">
 
-        <!-- IZQUIERDA -->
-        <div class="header-left">
-        <a href="index.html" class="logo">
-           <img src="logo1.png" alt="WeMix Logo">
+    <!-- IZQUIERDA -->
+    <div class="header-left">
+        <a href="inedex.html" class="logo">
+            <img src="logo1.png" alt="WeMix Logo">
         </a>
-        </div>
+    </div>
 
-        <!-- CENTRO -->
-        <nav class="nav" id="mainNav">
-            <a href="explorer.html">Explorar</a>
-            <a href="downloads.html" class="active">Mis Descargas</a>
-            <a href="upload.html">Subir Track</a>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="profile.html">Perfil</a>
-        </nav>
+    <!-- CENTRO -->
+    <nav class="nav" id="mainNav">
+        <a href="explorer.html" class="active">Explorar</a>
+        <a href="downloads.html">Mis Descargas</a>
+        <a href="upload.html">Subir Track</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html">Perfil</a>
+    </nav>
 
-        <!-- DERECHA -->
+<!-- DERECHA -->
 <div class="header-right" id="headerRight">
 
     <span class="membership-badge" id="membershipBadge">
@@ -39,15 +39,16 @@
 
 </div>
 
-    </header>
+</header>
+
 
     <!-- MAIN CONTENT -->
     <main class="container">
 
         <!-- PAGE TITLE -->
         <section class="page-title">
-            <h1>Mis Descargas</h1>
-            <p>Vuelve a descargar tus tracks sin coste adicional</p>
+            <h1>Explorar el Pool</h1>
+            <p>Mashups y edits exclusivos para DJs profesionales</p>
         </section>
 
         <!-- FILTERS -->
@@ -72,30 +73,26 @@
         <section class="track-list">
             
             <!-- TRACK HEADER -->
-            <div class="track-header">
+        <div class="track-header">
             <span></span>
             <span>Track</span>
             <span>Tipo</span>
             <span>Género</span>
             <span>BPM</span>
             <span>Key</span>
-            <span>Fecha</span>
             <span></span>
         </div>
 
-        <div id="downloadsList"></div>
+
+        <div id="explorerList">
 
 
-
-        </section>
+            
+        </div>
 
     </main>
 
-
-
-
-
-    <!-- AUDIO PLAYER -->
+<!-- AUDIO PLAYER -->
 <div class="audio-player" id="audioPlayer">
 
     <!-- LEFT -->
@@ -131,6 +128,8 @@
 </div>
 
 <audio id="mainAudio"></audio>
+
+
 
     <script src="script.js"></script>
 </body>

@@ -2,135 +2,632 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>WeMix – Explorar Pool</title>
+    <title>WeMix – DJ Pool</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="home-page">
 
 <!-- HEADER -->
-<header class="header">
+<header class="header home-header">
 
-    <!-- IZQUIERDA -->
     <div class="header-left">
-        <a href="home.html" class="logo">
-            <img src="logo1.png" alt="WeMix Logo">
+<a href="index.html" class="logo">
+    <img src="logo1.png" alt="WeMix Logo">
+</a>
+    </div>
+
+    <nav class="nav">
+        <a href="explorer.html">Explorar</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#membresias">Membresías</a>
+        <a href="#subir-musica">Subir música</a>
+    </nav>
+
+    <div class="header-right">
+        <a href="login.html" class="btn-login">
+            Iniciar sesión
         </a>
     </div>
 
-    <!-- CENTRO -->
-    <nav class="nav" id="mainNav">
-        <a href="index.html" class="active">Explorar</a>
-        <a href="downloads.html">Mis Descargas</a>
-        <a href="upload.html">Subir Track</a>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="profile.html">Perfil</a>
-    </nav>
-
-<!-- DERECHA -->
-<div class="header-right" id="headerRight">
-
-    <span class="membership-badge" id="membershipBadge">
-        FREE
-    </span>
-
-    <span class="credits" id="creditsDisplay">
-        Créditos: 0
-    </span>
-
-</div>
-
 </header>
 
+<!-- HERO -->
+<section class="hero">
 
-    <!-- MAIN CONTENT -->
-    <main class="container">
+    <div class="hero-content">
 
-        <!-- PAGE TITLE -->
-        <section class="page-title">
-            <h1>Explorar el Pool</h1>
-            <p>Mashups y edits exclusivos para DJs profesionales</p>
-        </section>
+        <span class="hero-badge">
+            Plataforma exclusiva para DJs y creadores
+        </span>
 
-        <!-- FILTERS -->
-        <section class="filters">
-            <input type="text" placeholder="Buscar track o creador">
-            <select>
-                <option>Género</option>
-                <option>House</option>
-                <option>Tech House</option>
-                <option>EDM</option>
-            </select>
+        <h1>
+            La record pool donde los edits cobran valor
+        </h1>
 
-            <select>
-                <option>Tipo</option>
-                <option>Mashup</option>
-                <option>Edit</option>
-                <option>Extended</option>
-            </select>
-        </section>
+        <p class="hero-text">
+            Descubre, publica y monetiza mashups, edits y versiones exclusivas
+            para DJs de reggaeton, afro, trap, dembow y cultura urbana.
+        </p>
 
-        <!-- TRACK LIST -->
-        <section class="track-list">
-            
-            <!-- TRACK HEADER -->
-        <div class="track-header">
-            <span></span>
-            <span>Track</span>
-            <span>Tipo</span>
-            <span>Género</span>
-            <span>BPM</span>
-            <span>Key</span>
-            <span></span>
+        <div class="hero-actions">
+
+            <a href="register.html" class="btn-primary">
+                Crear cuenta
+            </a>
+
+            <a href="index.html" class="btn-secondary">
+                Explorar catálogo
+            </a>
+
         </div>
 
+    </div>
 
-        <div id="explorerList">
+    <div class="hero-visual">
 
+        <div class="hero-player">
 
-            
+            <div class="hero-player-top">
+                <span>NOW PLAYING</span>
+                <span>5 créditos</span>
+            </div>
+
+            <h3>Afro Summer Edit</h3>
+
+            <p>DJ WeMix • Afro Edit • 105 BPM</p>
+
+            <div class="hero-wave"></div>
+
         </div>
 
-    </main>
+    </div>
 
-<!-- AUDIO PLAYER -->
-<div class="audio-player" id="audioPlayer">
+</section>
 
-    <!-- LEFT -->
-    <div class="player-left">
+<!-- STATS -->
+<section class="home-stats">
 
-        <button id="playerToggle" class="player-play">
-            ▶
+    <div class="home-stat">
+        <strong>+4.000</strong>
+        <span>Tracks exclusivos</span>
+    </div>
+
+    <div class="home-stat">
+        <strong>+500</strong>
+        <span>Creadores activos</span>
+    </div>
+
+    <div class="home-stat">
+        <strong>+12.000</strong>
+        <span>Descargas mensuales</span>
+    </div>
+
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="como-funciona">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Cómo funciona
+        </span>
+
+        <h2>
+            Una plataforma diseñada para DJs y creadores
+        </h2>
+
+        <p>
+            Descubre edits exclusivos, publica tus tracks y monetiza
+            tu música dentro de una comunidad profesional.
+        </p>
+
+    </div>
+
+    <div class="how-grid">
+
+        <div class="how-card">
+
+            <div class="how-number">01</div>
+
+            <h3>Explora</h3>
+
+            <p>
+                Descubre mashups, edits y versiones exclusivas
+                organizadas por género, BPM y tipo de track.
+            </p>
+
+        </div>
+
+        <div class="how-card">
+
+            <div class="how-number">02</div>
+
+            <h3>Descarga</h3>
+
+            <p>
+                Utiliza créditos para desbloquear tracks y
+                vuelve a descargarlos cuando quieras.
+            </p>
+
+        </div>
+
+        <div class="how-card">
+
+            <div class="how-number">03</div>
+
+            <h3>Publica</h3>
+
+            <p>
+                Sube tus propios edits y compártelos con miles
+                de DJs dentro de WeMix.
+            </p>
+
+        </div>
+
+        <div class="how-card">
+
+            <div class="how-number">04</div>
+
+            <h3>Monetiza</h3>
+
+            <p>
+                Genera ganancias estimadas a medida que otros
+                usuarios descargan tus tracks.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FEATURES -->
+<section class="features-section" id="subir-musica">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Todo lo que puedes hacer
+        </span>
+
+        <h2>
+            Diseñado para la nueva generación de DJs
+        </h2>
+
+        <p>
+            Descubre tracks exclusivos, construye tu catálogo
+            y monetiza tus propios edits dentro del ecosistema WeMix.
+        </p>
+
+    </div>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ⬇
+            </div>
+
+            <h3>Descarga con créditos</h3>
+
+            <p>
+                Utiliza créditos para desbloquear tracks
+                según el tipo de edit y vuelve a descargarlos
+                cuando quieras.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎵
+            </div>
+
+            <h3>Explora por BPM y género</h3>
+
+            <p>
+                Encuentra rápidamente edits organizados
+                por tonalidad, BPM, género y tipo de track.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📈
+            </div>
+
+            <h3>Monetiza tus tracks</h3>
+
+            <p>
+                Genera ganancias estimadas a medida
+                que otros DJs descargan tus mashups
+                y edits exclusivos.
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🚀
+            </div>
+
+            <h3>Construye tu perfil</h3>
+
+            <p>
+                Publica tus tracks, consigue descargas
+                y haz crecer tu presencia dentro de WeMix.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MEMBERSHIPS -->
+<section class="pricing-section" id="membresias">
+
+    <div class="section-heading">
+
+        <span class="section-badge">
+            Membresías
+        </span>
+
+        <h2>
+            Elige el plan que mejor encaje contigo
+        </h2>
+
+        <p>
+            Accede a créditos mensuales, desbloquea tracks
+            exclusivos y publica tus propios edits dentro de WeMix.
+        </p>
+
+    </div>
+
+    <div class="pricing-grid">
+
+        <!-- FREE -->
+
+        <div class="pricing-card">
+
+            <span class="pricing-plan free">
+                FREE
+            </span>
+
+            <h3>0€/mes</h3>
+
+            <p class="pricing-description">
+                Explora la plataforma y descubre el ecosistema WeMix.
+            </p>
+
+            <ul class="pricing-features">
+
+                <li>Acceso limitado al catálogo</li>
+
+                <li>Preview de tracks</li>
+
+                <li>Perfil básico</li>
+
+                <li>Sin subida de tracks</li>
+
+            </ul>
+
+        <button
+            class="btn-secondary"
+            id="upgradeFree"
+        >
+            Empezar gratis
         </button>
 
-        <div class="player-meta">
-            <strong id="playerTrack">Track</strong>
+        </div>
 
-            <span id="playerDetails">
-                DJ User • Mashup • 122 BPM • 8A
+        <!-- PLUS -->
+
+        <div class="pricing-card pricing-featured">
+
+            <div class="pricing-popular">
+                Más popular
+            </div>
+
+            <span class="pricing-plan plus">
+                PLUS
             </span>
+
+            <h3>19,99€/mes</h3>
+
+            <p class="pricing-description">
+                Perfecto para DJs activos y creadores emergentes.
+            </p>
+
+            <ul class="pricing-features">
+
+                <li>120 créditos mensuales</li>
+
+                <li>Sube tus propios tracks</li>
+
+                <li>Ganancias estimadas</li>
+
+                <li>Dashboard creator</li>
+
+            </ul>
+
+        <button
+            class="btn-primary"
+            id="upgradePlus"
+        >
+            Elegir PLUS
+        </button>
+
+        </div>
+
+        <!-- PRO -->
+
+        <div class="pricing-card">
+
+            <span class="pricing-plan pro">
+                PRO
+            </span>
+
+            <h3>29,99€/mes</h3>
+
+            <p class="pricing-description">
+                Para DJs y uploaders que utilizan WeMix diariamente.
+            </p>
+
+            <ul class="pricing-features">
+
+                <li>300 créditos mensuales</li>
+
+                <li>Más visibilidad en la plataforma</li>
+
+                <li>Uploads prioritarios</li>
+
+                <li>Estadísticas avanzadas</li>
+
+            </ul>
+
+        <button
+            class="btn-secondary"
+            id="upgradePro"
+        >
+            Elegir PRO
+        </button>
+
         </div>
 
     </div>
 
-    <!-- CENTER -->
-    <div class="player-center">
+</section>
 
-        <span id="currentTime">0:00</span>
+<!-- TRENDING -->
+<section class="trending-section">
 
-        <div class="player-progress">
-            <div class="player-progress-fill" id="playerProgressFill"></div>
+    <div class="trending-top">
+
+        <div>
+
+            <span class="section-badge">
+                Trending
+            </span>
+
+            <h2>
+                Lo más descargado en WeMix
+            </h2>
+
         </div>
 
-        <span id="duration">0:00</span>
+        <a href="index.html" class="btn-secondary">
+            Explorar catálogo
+        </a>
 
     </div>
 
-</div>
+    <div class="trending-grid">
 
-<audio id="mainAudio"></audio>
+        <!-- CARD -->
 
+        <div class="trending-card">
 
+            <div class="trending-cover"></div>
 
-    <script src="script.js"></script>
+            <div class="trending-info">
+
+                <span class="trending-genre">
+                    REGGAETON
+                </span>
+
+                <h3>
+                    Downtown Dembow Edit
+                </h3>
+
+                <p>
+                    DJ WeMix
+                </p>
+
+                <div class="trending-meta">
+
+                    <span>105 BPM</span>
+                    <span>•</span>
+                    <span>5 créditos</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="trending-card">
+
+            <div class="trending-cover"></div>
+
+            <div class="trending-info">
+
+                <span class="trending-genre">
+                    AFRO
+                </span>
+
+                <h3>
+                    Summer Afro Mashup
+                </h3>
+
+                <p>
+                    DJ Nova
+                </p>
+
+                <div class="trending-meta">
+
+                    <span>110 BPM</span>
+                    <span>•</span>
+                    <span>3 créditos</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="trending-card">
+
+            <div class="trending-cover"></div>
+
+            <div class="trending-info">
+
+                <span class="trending-genre">
+                    TRAP
+                </span>
+
+                <h3>
+                    Club Energy Intro
+                </h3>
+
+                <p>
+                    DJ Pulse
+                </p>
+
+                <div class="trending-meta">
+
+                    <span>98 BPM</span>
+                    <span>•</span>
+                    <span>2 créditos</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="trending-card">
+
+            <div class="trending-cover"></div>
+
+            <div class="trending-info">
+
+                <span class="trending-genre">
+                    DEMBOW
+                </span>
+
+                <h3>
+                    Nightclub Transition Edit
+                </h3>
+
+                <p>
+                    DJ Zion
+                </p>
+
+                <div class="trending-meta">
+
+                    <span>102 BPM</span>
+                    <span>•</span>
+                    <span>5 créditos</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <!-- BRAND -->
+
+        <div>
+
+            <div class="logo footer-logo">
+                WeMix
+            </div>
+
+            <p class="footer-text">
+                Plataforma premium para descubrir, compartir
+                y monetizar edits exclusivos para DJs.
+            </p>
+
+        </div>
+
+        <!-- PLATFORM -->
+
+        <div>
+
+            <h4>Plataforma</h4>
+
+            <ul class="footer-links">
+
+                <li><a href="#">Explorar</a></li>
+                <li><a href="#">Precios</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Subir música</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- SUPPORT -->
+
+        <div>
+
+            <h4>Soporte</h4>
+
+            <ul class="footer-links">
+
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Privacidad</a></li>
+                <li><a href="#">Términos</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 WeMix. Todos los derechos reservados.
+        </span>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
