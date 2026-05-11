@@ -37,6 +37,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
     }
 
+        /* =========================
+    PROFILE DATA
+    ========================= */
+
+    const profileName =
+        document.getElementById("profileName");
+
+    if (profileName && user) {
+
+        profileName.textContent =
+            user.djName;
+
+    }
+
     const publicPages = ["login.html", "register.html", "home.html", "onboarding.html"];
 
     const currentPage = window.location.pathname.split("/").pop();
@@ -570,6 +584,50 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!submitBtn) return;
 
     const fileInput = document.getElementById("audioFile");
+const keyInput =
+    document.getElementById("trackKey");
+
+const keyError =
+    document.getElementById("keyError");
+
+const validKeys = [
+    "1A","2A","3A","4A","5A","6A",
+    "7A","8A","9A","10A","11A","12A",
+    "1B","2B","3B","4B","5B","6B",
+    "7B","8B","9B","10B","11B","12B"
+];
+
+if (keyInput) {
+
+    keyInput.addEventListener("input", () => {
+
+        let value =
+            keyInput.value.toUpperCase();
+
+        value = value.replace(/[^0-9AB]/g, "");
+
+        keyInput.value = value;
+
+        if (
+            value.length >= 2 &&
+            !validKeys.includes(value)
+        ) {
+
+            keyInput.classList.add("input-invalid");
+
+            keyError.classList.remove("hidden");
+
+        } else {
+
+            keyInput.classList.remove("input-invalid");
+
+            keyError.classList.add("hidden");
+
+        }
+
+    });
+
+}
 
     submitBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -584,12 +642,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
         const fileName = fileInput.files[0]?.name || null;
-
-        // Validación básica
-        if (!title || !bpm) {
-            alert("Por favor completa los campos obligatorios");
-            return;
-        }
 
         // Usuario actual
         const user = JSON.parse(localStorage.getItem("wemixUser"));
@@ -625,9 +677,13 @@ document.addEventListener("DOMContentLoaded", () => {
             notes,
             fileName,
             creditCost,
-            audio: "audio/demo1.mp3",
+            audio: [
+                "audio/demo1.mp3",
+                "audio/demo2.mp3",
+                "audio/demo3.mp3"
+            ][Math.floor(Math.random() * 3)],
             status: "En revisión",
-            downloads: Math.floor(Math.random() * 500),
+            downloads: Math.floor(Math.random() * 20),
             date: new Date().toISOString()
         };
 
@@ -913,19 +969,32 @@ const alreadyDownloaded =
         row.querySelector(".btn-download, .btn-redownload");
     downloadBtn.addEventListener("click", () => {
 
-        if (alreadyDownloaded) {
+if (alreadyDownloaded) {
 
-        const link = document.createElement("a");
+    fetch(track.audio)
+        .then(response => response.blob())
+        .then(blob => {
 
-        link.href = track.audio;
+            const blobUrl =
+                window.URL.createObjectURL(blob);
 
-        link.download = `${track.title}.mp3`;
+            const link =
+                document.createElement("a");
 
-        document.body.appendChild(link);
+            link.href = blobUrl;
 
-        link.click();
+            link.download =
+                `${track.title}.mp3`;
 
-        document.body.removeChild(link);
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+            window.URL.revokeObjectURL(blobUrl);
+
+        });
 
     return;
 }
@@ -977,11 +1046,6 @@ const alreadyDownloaded =
         downloads[currentUser.email] = [];
     }
 
-    const alreadyDownloaded =
-    downloads[currentUser.email].some(
-        downloadedTrack =>
-            downloadedTrack.title === track.title
-    );
 
 
     downloads[currentUser.email].push(track);
@@ -1009,17 +1073,30 @@ const alreadyDownloaded =
             `Créditos: ${currentUser.credits}`;
     }
 
-        const link = document.createElement("a");
+fetch(track.audio)
+    .then(response => response.blob())
+    .then(blob => {
 
-    link.href = track.audio;
+        const blobUrl =
+            window.URL.createObjectURL(blob);
 
-    link.download = `${track.title}.mp3`;
+        const link =
+            document.createElement("a");
 
-    document.body.appendChild(link);
+        link.href = blobUrl;
 
-    link.click();
+        link.download =
+            `${track.title}.mp3`;
 
-    document.body.removeChild(link);
+        document.body.appendChild(link);
+
+        link.click();
+
+        link.remove();
+
+        window.URL.revokeObjectURL(blobUrl);
+
+    });
 
     alert("Track descargado correctamente");
 
@@ -1262,6 +1339,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         downloadsList.appendChild(row);
 
+        const redownloadBtn =
+    row.querySelector(".btn-redownload");
+
+redownloadBtn.addEventListener("click", () => {
+
+    fetch(track.audio)
+        .then(response => response.blob())
+        .then(blob => {
+
+            const blobUrl =
+                window.URL.createObjectURL(blob);
+
+            const link =
+                document.createElement("a");
+
+            link.href = blobUrl;
+
+            link.download =
+                `${track.title}.mp3`;
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+            window.URL.revokeObjectURL(blobUrl);
+
+        });
+
+});
+
     });
 
 });
@@ -1296,8 +1405,25 @@ document.addEventListener("DOMContentLoaded", () => {
         freeBtn.addEventListener("click", () => {
 
             user.membership = "FREE";
+            user.credits = 0;
 
-            user.credits = 5;
+            let users =
+    JSON.parse(localStorage.getItem("wemixUsers")) || [];
+
+users = users.map(u => {
+
+    if (u.email === user.email) {
+        return user;
+    }
+
+    return u;
+
+});
+
+localStorage.setItem(
+    "wemixUsers",
+    JSON.stringify(users)
+);
 
             localStorage.setItem(
                 "wemixUser",
@@ -1320,8 +1446,24 @@ document.addEventListener("DOMContentLoaded", () => {
         plusBtn.addEventListener("click", () => {
 
             user.membership = "PLUS";
+            user.credits = 120;
+            let users =
+    JSON.parse(localStorage.getItem("wemixUsers")) || [];
 
-            user.credits += 120;
+users = users.map(u => {
+
+    if (u.email === user.email) {
+        return user;
+    }
+
+    return u;
+
+});
+
+localStorage.setItem(
+    "wemixUsers",
+    JSON.stringify(users)
+);
 
             localStorage.setItem(
                 "wemixUser",
@@ -1344,8 +1486,25 @@ document.addEventListener("DOMContentLoaded", () => {
         proBtn.addEventListener("click", () => {
 
             user.membership = "PRO";
+            user.credits = 300;
 
-            user.credits += 300;
+            let users =
+    JSON.parse(localStorage.getItem("wemixUsers")) || [];
+
+users = users.map(u => {
+
+    if (u.email === user.email) {
+        return user;
+    }
+
+    return u;
+
+});
+
+localStorage.setItem(
+    "wemixUsers",
+    JSON.stringify(users)
+);
 
             localStorage.setItem(
                 "wemixUser",

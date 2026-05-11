@@ -12,7 +12,7 @@
 
     <div class="header-left">
 <a href="home.html" class="logo">
-    WeMix
+    <img src="logo1.png" alt="WeMix Logo">
 </a>
     </div>
 
@@ -128,10 +128,26 @@
             <div class="form-group">
                 <label>Género</label>
                 <select id="trackGenre">
-                    <option>Tech House</option>
-                    <option>House</option>
-                    <option>EDM</option>
-                    <option>Afro House</option>
+                            <option value="" selected disabled>
+            Selecciona género
+        </option>
+                    <option value="Reggaeton">Reggaeton</option>
+
+                    <option value="Dembow">Dembow</option>
+
+                    <option value="Afro">Afro</option>
+
+                    <option value="Trap">Trap</option>
+
+                    <option value="Funk">Funk</option>
+
+                    <option value="French">French</option>
+
+                    <option value="Bachata">Bachata</option>
+
+                    <option value="Salsa">Salsa</option>
+
+                    <option value="Tech">Tech</option>
                 </select>
             </div>
 
@@ -142,12 +158,15 @@
 
             <div class="form-group">
                 <label>Key</label>
-                <select id="trackKey">
-                    <option>8A</option>
-                    <option>9A</option>
-                    <option>10A</option>
-                    <option>8B</option>
-                </select>
+                <input
+                    type="text"
+                    id="trackKey"
+                    placeholder="Ej: 8A"
+                    maxlength="3"
+                />
+                <p id="keyError" class="input-error hidden">
+    Key inválida. Usa formato Camelot (8A, 9B...)
+</p>
             </div>
 
             <div class="form-group full-width">
